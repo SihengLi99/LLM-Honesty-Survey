@@ -1,8 +1,10 @@
 # A Survey on the Honesty of Large Language Models
+![](https://img.shields.io/badge/PRs-welcome-brightgreen) 
+<img src="https://img.shields.io/badge/Version-1.0-blue.svg" alt="Version">
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+![](https://img.shields.io/github/last-commit/SihengLi99/LLM-Honesty-Survey?color=green) 
 
-## What is This Survey About?
-Honesty is a fundamental principle for aligning large language models (LLMs) with human values, requiring these models to recognize what they know and don't know and be able to faithfully express their knowledge. Despite promising, current LLMs still exhibit significant dishonest behaviors, such as confidently presenting wrong answers or failing to express what they know. Moreover, research on the honesty of LLMs also faces challenges, including varying definitions of honesty, difficulties in distinguishing between known and unknown knowledge, and a lack of comprehensive understanding of related research. To address these issues, we provide a survey on the honesty of LLMs, covering its clarification, evaluation approaches, and strategies for improvement. Moreover, we offer insights for future research, aiming to inspire further exploration in this important area.
-
+This repository offers a comprehensive collection of papers exploring the honesty of LLMs, covering its clarification, evaluation approaches, and strategies for improvement. Dive deeper into these studies by reading our in-depth survey: [A Survey on the Honesty of Large Language Models]().
 
 ## Table of Content
 - [What is This Survey About?](#-what-is-this-survey-about)
@@ -36,16 +38,23 @@ Honesty is a fundamental principle for aligning large language models (LLMs) wit
   - [Training-based Approaches](#training-based-approaches-1)
     - [Self-aware Fine-tuning](#self-aware-fine-tuning)
     - [Self-supervised Fine-tuning](#self-supervised-fine-tuning)
-- [Future Work](#future-work)
 
 
 ## Honesty in LLMs
 ### What is Honesty in LLMs
+
+<div align="center">
+
+<img src="./assets/main_figure.jpg">
+<p><em>Figure 1: An illustration of an honest LLM that demonstrates both self-knowledge and self-expression.</em></p>
+
+</div>
 In this paper, we consider an LLM to be honest if it fulfills these two widely accepted criteria: *possessing both self-knowledge and self-expression*.
 Self-knowledge involves the model being aware of its own capabilities, recognizing what it knows and what it
 doesn’t, allowing it to acknowledge limitations or convey uncertainty when necessary. Self-expression refers
 to the model’s ability to faithfully express its knowledge, leading to reliable outputs.
 An illustrated example is shown in Fig. 1. 
+
 
 - A general language assistant as a laboratory for alignment, <ins>arXiv, 2021</ins> [[Paper](https://arxiv.org/abs/2112.00861)]
 - Language models (mostly) know what they know, <ins>arXiv, 2022</ins> [[Paper](http://arxiv.org/abs/2207.05221)]
@@ -55,8 +64,10 @@ An illustrated example is shown in Fig. 1.
 - Behonest: Benchmarking honesty of large language models, <ins>arXiv, 2024</ins> [[Paper](http://arxiv.org/abs/2406.13261)][[Code](https://github.com/GAIR-NLP/BeHonest)]
 
 ### Self-knowledge
+The self-knowledge capacity of LLMs hinges on their ability to recognize what they know and what they don’t know. This enables them to explicitly state “I don’t know” when lacking necessary knowledge, thereby avoiding making wrong statements. Additionally,
+it also allows them to provide confidence or uncertainty indicators in responses to reflect the likelihood of their correctness.
 
-- Self-knowledge, <ins>Routledge, 2010</ins>[[Paper](https://www.taylorfrancis.com/books/mono/10.4324/9780203835678/self-knowledge-brie-gertler)]
+- Self-knowledge, <ins>Routledge, 2010</ins> [[Paper](https://www.taylorfrancis.com/books/mono/10.4324/9780203835678/self-knowledge-brie-gertler)]
 - A general language assistant as a laboratory for alignment, <ins>arXiv, 2021</ins> [[Paper](https://arxiv.org/abs/2112.00861)]
 - Language models (mostly) know what they know, <ins>arXiv, 2022</ins> [[Paper](http://arxiv.org/abs/2207.05221)]
 - Cognitive dissonance: Why do language model outputs disagree with internal representations of truthfulness?, <ins>EMNLP, 2023</ins> [[Paper](https://aclanthology.org/2023.emnlp-main.291/)][[Code](https://github.com/lingo-mit/lm-truthfulness)]
@@ -86,6 +97,10 @@ An illustrated example is shown in Fig. 1.
 - Optimising Calls to Large Language Models with Uncertainty-Based Two-Tier Selection, <ins>arXiv, 2024</ins> [[Paper](https://arxiv.org/abs/2405.02134)]
 
 ### Self-consistency
+Self-expression refers to the model’s ability to express its knowledge faithfully, either
+parametric knowledge acquired through training or in-context knowledge. This enables the model to ground
+its responses in its knowledge rather than fabricating information.
+
 - Physics of Language Models: Part 3.1, Knowledge Storage and Extraction, <ins>arXiv, 2024</ins> [[Paper](https://arxiv.org/abs/2309.14316)]
 - How Language Model Hallucinations Can Snowball, <ins>arXiv, 2024</ins> [[Paper](https://arxiv.org/abs/2305.13534)][[Code](https://github.com/Nanami18/Snowballed_Hallucination)]
 - Inference-time intervention: Eliciting truthful answers from a language model, <ins>NeurIPS, 2024</ins> [[Paper](https://openreview.net/forum?id=aLLuYpn83y)][[Code](https://github.com/likenneth/honest_llama)]
@@ -103,6 +118,12 @@ An illustrated example is shown in Fig. 1.
 
 ## Evaluation of LLM Honesty
 ### Self-knowledge
+<div align="center">
+<img src="./assets/evaluation_self_knowledge.jpg">
+<p><em>Figure 2: Illustrations of self-knowledge evaluation, encompassing the recognition of known/unknown, calibration, and selective prediction. “Conf” indicates the LLM’s confidence score and “Acc” represents the
+accuracy of the response.</em></p>
+</div>
+
 #### Recognition of Known/Unknown
 - Do large language models know what they don’t know?, <ins>ACL Findings, 2023</ins> [[Paper](http://arxiv.org/abs/2305.18153)][[Code](https://github.com/yinzhangyue/SelfAware)]
 - Knowledge of knowledge: Exploring known-unknowns uncertainty with large language models, <ins>arXiv, 2023</ins> [[Paper](http://arxiv.org/abs/2305.13712)][[Code](https://github.com/amayuelas/knowledge-of-knowledge)]
@@ -133,6 +154,11 @@ An illustrated example is shown in Fig. 1.
 - Getting MoRE out of Mixture of Language Model Reasoning Experts, <ins>EMNLP Findings, 2023</ins> [[Paper](https://aclanthology.org/2023.findings-emnlp.552.pdf)] [[Code](https://github.com/NoviScl/MoRE)]
 
 ### Self-consistency
+<div align="center">
+<img src="./assets/evaluation_self_expression.jpg">
+<p><em>Figure 3: Illustrations of self-expression evaluation, encompassing both identification-based and
+identification-free approaches.</em></p>
+</div>
 #### Identification-based Evaluation
 - Do large language models know what they don’t know?, <ins>ACL Findings, 2023</ins> [[Paper](http://arxiv.org/abs/2305.18153)][[Code](https://github.com/yinzhangyue/SelfAware)]
 - Knowledge of knowledge: Exploring known-unknowns uncertainty with large language models, <ins>arXiv, 2023</ins> [[Paper](http://arxiv.org/abs/2305.13712)][[Code](https://github.com/amayuelas/knowledge-of-knowledge)]
@@ -151,6 +177,10 @@ An illustrated example is shown in Fig. 1.
 - Benchmarking and improving generator-validator consistency of language models, <ins>ICLR, 2024</ins> [[Paper](http://arxiv.org/abs/2310.01846)][[Code](https://github.com/XiangLi1999/GV-consistency)]
 
 ## Methods of Self-knowledge
+<div align="center">
+<img src="./assets/improvement_self_knowledge.jpg">
+<p><em>Figure 4: Improvement of self-knowledge, encompassing both training-based and training-free approaches.</em></p>
+</div>
 ### Training-free Approaches
 #### Predictive Probability
 - Uncertainty quantification with pre-trained language models: A large-scale empirical analysis, <ins>EMNLP Findings, 2022</ins> [[Paper](http://arxiv.org/abs/2210.04714)][[Code](https://github.com/xiaoyuxin1002/UQ-PLM.git)]
@@ -158,7 +188,8 @@ An illustrated example is shown in Fig. 1.
 - Semantic uncertainty: Linguistic invariances for uncertainty estimation in natural language generation, <ins>ICLR, 2023</ins> [[Paper](http://arxiv.org/abs/2302.09664)][[Code](https://github.com/lorenzkuhn/semantic_uncertainty)]
 - Self-evaluation improves selective generation in large language models, <ins>NeurIPS Workshop, 2023</ins> [[Paper](http://arxiv.org/abs/2312.09300)]
 - Shifting attention to relevance: Towards the uncertainty estimation of large language models, <ins>ACL, 2024</ins> [[Paper](http://arxiv.org/abs/2307.01379)][[Code](https://github.com/jinhaoduan/SAR)]
-- GPT-4 technical report, <ins>arXiv, 2023</ins> [[Paper](http://arxiv.org/abs/2303.08774)]
+- Uncertainty estimation in autoregressive structured prediction, <ins>ICLR, 2021</ins> [[Paper](https://arxiv.org/abs/2002.07650)]
+- Prompting gpt-3 to be reliable, <ins>ICLR, 2023</ins> [[Paper](https://arxiv.org/abs/2210.09150)][[Code](https://github.com/NoviScl/GPT3-Reliability)]
 
 #### Prompting
 - Language models (mostly) know what they know, <ins>arXiv, 2022</ins> [[Paper](http://arxiv.org/abs/2207.05221)]
@@ -204,7 +235,7 @@ An illustrated example is shown in Fig. 1.
 
 #### Probing
 - Language models (mostly) know what they know, <ins>arXiv, 2022</ins> [[Paper](http://arxiv.org/abs/2207.05221)]
-- The internal state of an LLM knows when it’s lying, <ins>EMNLP Findings, 2023</ins> [[Paper](http://arxiv.org/abs/2304.13734)][[Code]()]
+- The internal state of an LLM knows when it’s lying, <ins>EMNLP Findings, 2023</ins> [[Paper](http://arxiv.org/abs/2304.13734)]
 - The geometry of truth: Emergent linear structure in large language model representations of true/false datasets, <ins>COLM, 2024</ins> [[Paper](http://arxiv.org/abs/2310.06824)][[Code](https://github.com/saprmarks/geometry-of-truth)]
 - On the universal truthfulness hyperplane inside LLMs, <ins>arXiv, 2024</ins> [[Paper](http://arxiv.org/abs/2408.10692)]
 - Discovering latent knowledge in language models without supervision, <ins>ICLR, 2023</ins> [[Paper](http://arxiv.org/abs/2212.03827)][[Code](https://www.github.com/collin-burns/discovering_latent_knowledge)]
@@ -212,24 +243,25 @@ An illustrated example is shown in Fig. 1.
 - LLM internal states reveal hallucination risk faced with a query, <ins>arXiv, 2024</ins> [[Paper](https://arxiv.org/abs/2407.03282v1)]
 
 ## Methods of Self-consistency
+<div align="center">
+<img src="./assets/improvement_self_expression.jpg">
+<p><em>Figure 5: Improvement of self-expression, encompassing both training-based and training-free approaches.</em></p>
+</div>
+
 ### Training-free Approaches
 #### Chain-of-thought Prompting
 - Chain-of-thought prompting elicits reasoning in large language models, <ins>NeurIPS, 2022</ins> [[Paper](http://arxiv.org/abs/2201.11903)]
-- Program of thoughts prompting: Disentangling computation from reasoning for numerical reasoning tasks, <ins>TMLR, 2023</ins> [[Paper](http://arxiv.org/abs/2308.04584)][[Code](https://github.com/TIGER-AI-Lab/Program-of-Thoughts)]
+- Large Language Models are Zero-Shot Reasoners, <ins>NeurIPS, 2022</ins> [[Paper](https://arxiv.org/abs/2205.11916)]
 - Least-to-most prompting enables complex reasoning in large language models, <ins>ICLR, 2023</ins> [[Paper](http://arxiv.org/abs/2305.01341)]
+- Measuring and Narrowing the Compositionality Gap in Language Models, <ins>EMNLP Findings, 2023</ins> [[Paper](https://arxiv.org/abs/2210.03350)][[Code](https://github.com/ofirpress/self-ask)]
 - Take a step back: Evoking reasoning via abstraction in large language models, <ins>ICLR, 2024</ins> [[Paper](http://arxiv.org/abs/2304.03461)]
-- Executable code actions elicit better LLM agents, <ins>ICML, 2024</ins> [[Paper](http://arxiv.org/abs/2312.06681)][[Code](https://github.com/xingyaoww/code-act)]
-- Teaching LLMs to abstain across languages via multilingual feedback, <ins>arXiv, 2024</ins> [[Paper](http://arxiv.org/abs/2406.15948)][[Code](https://github.com/BunsenFeng/M-AbstainQA)]
-- Phenomenal yet puzzling: Testing inductive reasoning capabilities of language models with hypothesis refinement, <ins>ICLR, 2024</ins> [[Paper](http://arxiv.org/abs/2310.07651)][[Code](https://github.com/linlu-qiu/lm-inductive-reasoning)]
-- Language models as inductive reasoners, <ins>EACL, 2024</ins> [[Paper](https://aclanthology.org/2024.eacl-long.13/)][[Code](https://github.com/ZonglinY/Inductive_Reasoning)]
-- Navigating the grey area: How expressions of uncertainty and overconfidence affect language models, <ins>EMNLP, 2023</ins> [[Paper](http://arxiv.org/abs/2302.13439)][[Code](https://github.com/katezhou/navigating_the_grey)]
-- Hypothesis search: Inductive reasoning with language models, <ins>ICLR, 2024</ins> [[Paper](http://arxiv.org/abs/2310.09199)][[Code](https://github.com/Relento/hypothesis_search)]
+- Plan-andsolve prompting: Improving zero-shot chain-of-thought reasoning by large language models, <ins>ACL, 2023</ins> [[Paper](https://arxiv.org/abs/2305.04091)][[Code](https://github.com/AGI-Edgerunners/Plan-and-Solve-Prompting)]
+- Fact-and-Reflection (FaR) Improves Confidence Calibration of Large Language Models, <ins>ACL Findings, 2024</ins> [[Paper](https://aclanthology.org/2024.findings-acl.515/)][[Code](https://github.com/colinzhaoust/fact-and-reflection)]
 
 #### Decoding-time Intervention
 - Inference-time intervention: Eliciting truthful answers from a language model, <ins>NeurIPS, 2024</ins> [[Paper](https://openreview.net/forum?id=aLLuYpn83y)][[Code](https://github.com/likenneth/honest_llama)]
 - In-context sharpness as alerts: An inner representation perspective for hallucination mitigation, <ins>ICML, 2024</ins> [[Paper](http://arxiv.org/abs/2404.04298)][[Code](https://github.com/hkust-nlp/Activation_decoding.git)]
 - Dola: Decoding by contrasting layers improves factuality in large language models, <ins>ICLR, 2024</ins> [[Paper](http://arxiv.org/abs/2309.03883)][[Code](https://github.com/voidism/DoLa)]
-- Unchosen experts can contribute too: Unleashing MoE models’ power by self-contrast, <ins>arXiv, 2024</ins> [[Paper](http://arxiv.org/abs/2407.18698)][[Code](https://github.com/DavidFanzz/SCMoE.git)]
 - Alleviating hallucinations of large language models through induced hallucinations, <ins>arXiv, 2023b</ins> [[Paper](http://arxiv.org/abs/2312.15710)][[Code](https://github.com/hillzhang1999/ICD)]
 - Trusting your evidence: Hallucinate less with context-aware decoding, <ins>NAACL, 2024</ins> [[Paper](http://arxiv.org/abs/2305.14739)]
 - Mitigating object hallucinations in large vision-language models through visual contrastive decoding, <ins>CVPR, 2024</ins> [[Paper](http://arxiv.org/abs/2406.03441)][[Code](https://github.com/DAMO-NLP-SG/VCD)]
@@ -258,15 +290,8 @@ An illustrated example is shown in Fig. 1.
 - Self-alignment for factuality: Mitigating hallucinations in LLMs via self-evaluation, <ins>arXiv, 2024</ins> [[Paper](https://arxiv.org/abs/2402.09267)][[Code](https://github.com/zhangxy-2019/Self-Alignment-for-Factuality)]
 - FLAME: Factuality-aware alignment for large language models, <ins>arXiv, 2024</ins> [[Paper](http://arxiv.org/abs/2404.02655)]
 
-
- ## Community Support
-
-If you have feedback on the taxonomy, notice missing papers, or have updates on accepted arXiv preprints, please email us or submit a pull request in the following markdown format:
-
-```markdown
-Paper Title, <ins>Conference/Journal/Preprint, Year</ins>  [[Paper](link)] [[Code](link)].
-```
-
 ## Citation
-```
+If you find this resource valuable for your research, we would appreciate it if you could cite our paper. Thank you!
+```bibtex
+
 ```
