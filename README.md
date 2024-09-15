@@ -159,6 +159,7 @@ accuracy of the response.</em></p>
 <p><em>Figure 3: Illustrations of self-expression evaluation, encompassing both identification-based and
 identification-free approaches.</em></p>
 </div>
+
 #### Identification-based Evaluation
 - Do large language models know what they don’t know?, <ins>ACL Findings, 2023</ins> [[Paper](http://arxiv.org/abs/2305.18153)][[Code](https://github.com/yinzhangyue/SelfAware)]
 - Knowledge of knowledge: Exploring known-unknowns uncertainty with large language models, <ins>arXiv, 2023</ins> [[Paper](http://arxiv.org/abs/2305.13712)][[Code](https://github.com/amayuelas/knowledge-of-knowledge)]
@@ -181,6 +182,7 @@ identification-free approaches.</em></p>
 <img src="./assets/improvement_self_knowledge.jpg">
 <p><em>Figure 4: Improvement of self-knowledge, encompassing both training-based and training-free approaches.</em></p>
 </div>
+
 ### Training-free Approaches
 #### Predictive Probability
 - Uncertainty quantification with pre-trained language models: A large-scale empirical analysis, <ins>EMNLP Findings, 2022</ins> [[Paper](http://arxiv.org/abs/2210.04714)][[Code](https://github.com/xiaoyuxin1002/UQ-PLM.git)]
