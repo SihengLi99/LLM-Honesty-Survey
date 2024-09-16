@@ -7,20 +7,19 @@
 This repository offers a comprehensive collection of papers exploring the honesty of LLMs, covering its clarification, evaluation approaches, and strategies for improvement. Dive deeper into these studies by reading our in-depth survey: [A Survey on the Honesty of Large Language Models]().
 
 ## Table of Content
-- [What is This Survey About?](#-what-is-this-survey-about)
 - [Honesty in LLMs](#-honesty-in-llms)
   - [What is Honesty in LLMs](#what-is-honesty-in-llms)
   - [Self-knowledge](#self-knowledge)
-  - [Self-consistency](#self-consistency)
+  - [Self-expression](#self-expression)
 - [Evaluation of LLM Honesty](#evaluation-of-llm-honesty)
   - [Self-knowledge](#self-knowledge-1)
     - [Recognition of Known/Unknown](#recognition-of-knownunknown)
     - [Calibration](#calibration)
     - [Selective Prediction](#selective-prediction)
-  - [Self-consistency](#self-consistency-1)
-    - [Reference-based Evaluation](#reference-based-evaluation)
-    - [Reference-free Evaluation](#reference-free-evaluation)
-- [Methods of Self-knowledge](#methods-of-self-knowledge)
+  - [Self-expression](#self-expression-1)
+    - [Identification-based Evaluation](#identification-based-evaluation)
+    - [Identification-free Evaluation](#identification-free-evaluation)
+- [Improvement of Self-knowledge](#improvement-of-self-knowledge)
   - [Training-free Approaches](#training-free-approaches)
     - [Predictive Probability](#predictive-probability)
     - [Prompting](#prompting)
@@ -29,9 +28,9 @@ This repository offers a comprehensive collection of papers exploring the honest
     - [Supervised Fine-tuning](#supervised-fine-tuning)
     - [Reinforcement Learning](#reinforcement-learning)
     - [Probing](#probing)
-- [Methods of Self-consistency](#methods-of-self-consistency)
+- [Improvement of Self-expression](#improvement-of-self-expression)
   - [Training-free Approaches](#training-free-approaches-1)
-    - [Chain-of-thought Prompting](#chain-of-thought-prompting)
+    - [Prompting](#prompting)
     - [Decoding-time Intervention](#decoding-time-intervention)
     - [Sampling and Aggregation](#sampling-and-aggregation-1)
     - [Post-generation Revision](#post-generation-revision)
@@ -40,7 +39,7 @@ This repository offers a comprehensive collection of papers exploring the honest
     - [Self-supervised Fine-tuning](#self-supervised-fine-tuning)
 
 
-## Honesty in LLMs
+## 🌟 Honesty in LLMs
 ### What is Honesty in LLMs
 
 <div align="center">
@@ -49,7 +48,8 @@ This repository offers a comprehensive collection of papers exploring the honest
 <p><em>Figure 1: An illustration of an honest LLM that demonstrates both self-knowledge and self-expression.</em></p>
 
 </div>
-In this paper, we consider an LLM to be honest if it fulfills these two widely accepted criteria: *possessing both self-knowledge and self-expression*.
+
+In this paper, we consider an LLM to be honest if it fulfills these two widely accepted criteria: <i>possessing both self-knowledge and self-expression</i>.
 Self-knowledge involves the model being aware of its own capabilities, recognizing what it knows and what it
 doesn’t, allowing it to acknowledge limitations or convey uncertainty when necessary. Self-expression refers
 to the model’s ability to faithfully express its knowledge, leading to reliable outputs.
@@ -96,7 +96,7 @@ it also allows them to provide confidence or uncertainty indicators in responses
 - Language Model Cascades: Token-Level Uncertainty and Beyond, <ins>arXiv, 2024</ins> [[Paper](https://arxiv.org/abs/2404.10136)]
 - Optimising Calls to Large Language Models with Uncertainty-Based Two-Tier Selection, <ins>arXiv, 2024</ins> [[Paper](https://arxiv.org/abs/2405.02134)]
 
-### Self-consistency
+### Self-expression
 Self-expression refers to the model’s ability to express its knowledge faithfully, either
 parametric knowledge acquired through training or in-context knowledge. This enables the model to ground
 its responses in its knowledge rather than fabricating information.
@@ -116,7 +116,7 @@ its responses in its knowledge rather than fabricating information.
 - Towards Robust and Faithful Summarization with Large Language Models, <ins>arXiv, 2024</ins> [[Paper](https://arxiv.org/abs/2404.05512)]
 - TrustLLM: Trustworthiness in Large Language Models, <ins>arXiv, 2024</ins> [[Paper](https://arxiv.org/abs/2401.05561)][[Code](https://github.com/HowieHwong/TrustLLM)]
 
-## Evaluation of LLM Honesty
+## 📈 Evaluation of LLM Honesty
 ### Self-knowledge
 <div align="center">
 <img src="./assets/evaluation_self_knowledge.jpg">
@@ -153,7 +153,7 @@ accuracy of the response.</em></p>
 - Generating with confidence: Uncertainty quantification for black-box large language models, <ins>TMLR, 2024</ins> [[Paper](https://arxiv.org/pdf/2305.19187)][[Code](https://github.com/zlin7/UQ-NLG)]
 - Getting MoRE out of Mixture of Language Model Reasoning Experts, <ins>EMNLP Findings, 2023</ins> [[Paper](https://aclanthology.org/2023.findings-emnlp.552.pdf)] [[Code](https://github.com/NoviScl/MoRE)]
 
-### Self-consistency
+### Self-expression
 <div align="center">
 <img src="./assets/evaluation_self_expression.jpg">
 <p><em>Figure 3: Illustrations of self-expression evaluation, encompassing both identification-based and
@@ -177,7 +177,7 @@ identification-free approaches.</em></p>
 - Simple synthetic data reduces sycophancy in large language models, <ins>arXiv, 2023</ins> [[Paper](https://arxiv.org/abs/2308.03958)]
 - Benchmarking and improving generator-validator consistency of language models, <ins>ICLR, 2024</ins> [[Paper](http://arxiv.org/abs/2310.01846)][[Code](https://github.com/XiangLi1999/GV-consistency)]
 
-## Methods of Self-knowledge
+## 🚀 Improvement of Self-knowledge
 <div align="center">
 <img src="./assets/improvement_self_knowledge.jpg">
 <p><em>Figure 4: Improvement of self-knowledge, encompassing both training-based and training-free approaches.</em></p>
@@ -244,14 +244,14 @@ identification-free approaches.</em></p>
 - Semantic entropy probes: Robust and cheap hallucination detection in LLMs, <ins>arXiv, 2024</ins> [[Paper](http://arxiv.org/abs/2406.15927)]
 - LLM internal states reveal hallucination risk faced with a query, <ins>arXiv, 2024</ins> [[Paper](https://arxiv.org/abs/2407.03282v1)]
 
-## Methods of Self-consistency
+## 🚀 Improvement of Self-expression
 <div align="center">
 <img src="./assets/improvement_self_expression.jpg">
 <p><em>Figure 5: Improvement of self-expression, encompassing both training-based and training-free approaches.</em></p>
 </div>
 
 ### Training-free Approaches
-#### Chain-of-thought Prompting
+#### Prompting
 - Chain-of-thought prompting elicits reasoning in large language models, <ins>NeurIPS, 2022</ins> [[Paper](http://arxiv.org/abs/2201.11903)]
 - Large Language Models are Zero-Shot Reasoners, <ins>NeurIPS, 2022</ins> [[Paper](https://arxiv.org/abs/2205.11916)]
 - Least-to-most prompting enables complex reasoning in large language models, <ins>ICLR, 2023</ins> [[Paper](http://arxiv.org/abs/2305.01341)]
@@ -292,7 +292,7 @@ identification-free approaches.</em></p>
 - Self-alignment for factuality: Mitigating hallucinations in LLMs via self-evaluation, <ins>arXiv, 2024</ins> [[Paper](https://arxiv.org/abs/2402.09267)][[Code](https://github.com/zhangxy-2019/Self-Alignment-for-Factuality)]
 - FLAME: Factuality-aware alignment for large language models, <ins>arXiv, 2024</ins> [[Paper](http://arxiv.org/abs/2404.02655)]
 
-## Citation
+## 📌 Citation
 If you find this resource valuable for your research, we would appreciate it if you could cite our paper. Thank you!
 ```bibtex
 
