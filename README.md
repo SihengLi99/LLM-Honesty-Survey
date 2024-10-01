@@ -295,5 +295,10 @@ identification-free approaches.</em></p>
 ## 📌 Citation
 If you find this resource valuable for your research, we would appreciate it if you could cite our paper. Thank you!
 ```bibtex
-
+@article{li2024survey,
+      title={A Survey on the Honesty of Large Language Models},
+      author={Siheng Li and Cheng Yang and Taiqiang Wu and Chufan Shi and Yuji Zhang and Xinyu Zhu and Zesen Cheng and Deng Cai and Mo Yu and Lemao Liu and Jie Zhou and Yujiu Yang and Ngai Wong and Xixin Wu and Wai Lam},
+      year={2024},
+      journal={arXiv preprint arXiv:2409.18786}
+}
 ```
