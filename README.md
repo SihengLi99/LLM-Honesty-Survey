@@ -4,7 +4,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 ![](https://img.shields.io/github/last-commit/SihengLi99/LLM-Honesty-Survey?color=green) 
 
-This repository offers a comprehensive collection of papers exploring the honesty of LLMs, covering its clarification, evaluation approaches, and strategies for improvement. Dive deeper into these studies by reading our in-depth survey: [A Survey on the Honesty of Large Language Models]().
+This repository offers a comprehensive collection of papers exploring the honesty of LLMs, covering its clarification, evaluation approaches, and strategies for improvement. Dive deeper into these studies by reading our in-depth survey: [A Survey on the Honesty of Large Language Models](https://arxiv.org/abs/2409.18786).
 
 ## Table of Content
 - [Honesty in LLMs](#-honesty-in-llms)
