@@ -226,6 +226,7 @@ identification-free approaches.</em></p>
 - Teaching models to express their uncertainty in words, <ins>TMLR, 2022</ins> [[Paper](http://arxiv.org/abs/2205.14334)][[Code](https://github.com/sylinrl/CalibratedMath)]
 - Calibrating large language models using their generations only, <ins>arXiv, 2024</ins> [[Paper](http://arxiv.org/abs/2403.05973)][[Code](https://github.com/parameterlab/apricot)]
 - Enhancing confidence expression in large language models through learning from past experience, <ins>arXiv, 2024</ins> [[Paper](http://arxiv.org/abs/2404.10315)]
+- Utilize the Flow before Stepping into the Same River Twice: Certainty Represented Knowledge Flow for Refusal-Aware Instruction Tuning, <ins>arXiv, 2024</ins> [[Paper](https://arxiv.org/abs/2410.06913v2)]
 
 #### Reinforcement Learning
 - Can AI assistants know what they don’t know?, <ins>ICML, 2024</ins> [[Paper](https://openreview.net/pdf?id=girxGkdECL)][[Code](https://github.com/OpenMOSS/Say-I-Dont-Know)]
